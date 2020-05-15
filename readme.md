@@ -11,7 +11,8 @@ load_nogmb_symbols
 load the *.sym file in no$gmb format, that is produced by link-gbz80 linker
 
     filename        : path and filename to *.sym symbols file
-    resolve_banks   : is optional parameter that allows to extract bank numbers from comments in *.sym file; False by default
+    resolve_banks   : is optional parameter that allows to extract bank numbers 
+                      from comments in *.sym file; False by default
 
 function returns the address->symbol dict
 
