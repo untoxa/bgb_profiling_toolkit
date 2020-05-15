@@ -18,7 +18,7 @@ load_nogmb_symbols
 
     symbols = load_nogmb_symbols(filename, resolve_banks=False)
 
-load the *.sym file in no$gmb format, that is produced by link-gbz80 linker
+parse the *.sym file in no$gmb format, that is produced by link-gbz80 linker
 
     filename        : path and filename to *.sym symbols file
     resolve_banks   : optional parameter that allows to extract bank numbers from the comments in *.sym file; 
@@ -31,7 +31,7 @@ calc_profiling_stats
 
     stats = calc_profiling_stats(filename, double_speed=False, symbols={})
 
-loads the BGB "debug messages" log file and calculates profiling stat
+parse the BGB "debug messages" log file and calculate profiling stat
 
     filename        : path and filename to the BGB log file
     double_speed    : set to True if cpu_fast() is called; False by default
@@ -50,7 +50,11 @@ where:
     min         : minumum number of cycles of this call
     max         : maximum number of cycles of this call
 
-![statistics](/screenshot.png)
+example output without symbols loaded:
+![statistics2](/screenshot2.png)
+
+with symbols loaded:
+![statistics1](/screenshot1.png)
 
 read_bgb_snspshot
 -----------------
