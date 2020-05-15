@@ -3,6 +3,13 @@ Profiling toolkit for SDCC and BGB
 
 BGB_toolkit.py contains these helper functions:
 
+pre-requirements:
+
+1. these changes to the GBDK to gather statistics: https://github.com/untoxa/gbdk-2020/commit/b64c5424985a26e977a9e942c90214750ec86345 (should be included in the next GBDK-2020 release)
+2. and your C-program must be compiled with -profile switch 
+3. you must switch on saving debug messages into the file in your BGB emulator:
+![BGB settings]/bgb_settings.png
+
 load_nogmb_symbols
 ------------------
 
