@@ -1,7 +1,7 @@
 Profiling toolkit for SDCC and BGB
 ==================================
 
-BGB_toolkit.py contains these functions:
+BGB_toolkit.py contains these helper functions:
 
 load_nogmb_symbols
 ------------------
@@ -11,8 +11,8 @@ load_nogmb_symbols
 load the *.sym file in no$gmb format, that is produced by link-gbz80 linker
 
     filename        : path and filename to *.sym symbols file
-    resolve_banks   : is optional parameter that allows to extract bank numbers 
-                      from comments in *.sym file; False by default
+    resolve_banks   : optional parameter that allows to extract bank numbers from the comments in *.sym file; 
+                      False by default
 
 function returns the address->symbol dict
 
@@ -24,8 +24,8 @@ calc_profiling_stats
 loads the BGB "debug messages" log file and calculates profiling stat
 
     filename        : path and filename to the BGB log file
-    double_speed    : set to True if cpu_fast() is called
-    symbols         : optional symbols dict as returned by load_nogmb_symbols
+    double_speed    : set to True if cpu_fast() is called; False by default
+    symbols         : optional symbols dict as returned by load_nogmb_symbols; empty dict by default
 
 function returns the stat dict where call trace is a key and node-stat dict for this trace is a value.
 
