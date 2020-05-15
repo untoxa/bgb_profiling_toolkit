@@ -29,9 +29,12 @@ loads the BGB "debug messages" log file and calculates profiling stat
 
 function returns the stat dict where call trace is a key and node-stat dict for this trace is a value.
 
-node-stat dict:
+node-stat dict contains:
+    
     {'ncalls': ncalls, 'totalclk': totalclk, 'min': min, 'max': max }
+    
 where: 
+    
     ncalls      : number of calls
     totalclk    : total amount of cycles
     min         : minumum number of cycles of this call
