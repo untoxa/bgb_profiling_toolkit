@@ -1,0 +1,242 @@
+; no$gmb format .sym file
+; Generated automagically by ASxxxx linker V01.75 (SDK 3.0.0)
+; Area: .  .ABS.
+00:0000 s__EMU_HEADER
+00:0000 s__HEADERf
+00:0000 s__CABS
+00:0000 s__HEADER0
+00:0000 s__DABS
+00:0000 s__HEADER1
+00:0000 s__HEADER2
+00:0000 s__HEADER3
+00:0000 s__HEADER4
+00:0000 s__HEADER5
+00:0000 s__HEADER6
+00:0000 s__HEADER7
+00:0000 s__HEADER8
+00:0000 s__HEADER9
+00:0000 s__DRAW_HEADER0
+00:0000 s__HRAM
+00:0000 s__HEADER
+00:0000 s__FONT_HEADER0
+00:0000 .init
+00:0000 s__DRAW_HEADER
+00:0000 s__FONT_HEADER
+00:0000 s__EMU_HEADER0
+00:0000 s__HEADER10
+00:0000 s__HEADERa
+00:0000 s__HEADER11
+00:0000 s__HEADERb
+00:0000 s__HRAM13
+00:0000 s__HEADER12
+00:0000 s__HEADERc
+00:0000 s__HEADERd
+00:0000 s__HEADERe
+00:0200 s__CODE
+00:0B4D s__HOME
+00:0FE9 s__BASE
+00:1E0D s__LIT
+00:1E0D s__GSINIT
+00:1E16 s__GSINITTAIL
+00:1E17 s__GSFINAL
+00:C000 .OAM
+00:C0A0 s__DATA
+00:C0A2 s__BSS
+00:C125 s__HEAP
+00:E000 .STACK
+00:FF80 .refresh_OAM
+; Area: _CODE
+00:0200 _test_printf
+00:0219 _test_profile2
+00:022F _test_profiler
+00:0248 _main
+00:029C __divsuchar
+00:02AB __modsuchar
+00:02B7 __divuschar
+00:02C9 __moduschar
+00:02D9 __divschar
+00:02E7 __modschar
+00:02F3 __divsint
+00:0307 __modsint
+00:0319 __divuchar
+00:0327 __moduchar
+00:0333 __divuint
+00:0347 __moduint
+00:0359 .mod8
+00:0359 .div8
+00:0361 .mod16
+00:0361 .div16
+00:0397 .modu8
+00:0397 .divu8
+00:039A .modu16
+00:039A .divu16
+00:03DB _putchar
+00:03E4 _setchar
+00:03ED _gotoxy
+00:03F8 _posx
+00:0409 _posy
+00:041A .adv_gcurs
+00:0437 .circle
+00:04DA .horlin
+00:0512 .verlin
+00:056E .circplot
+00:05EC .box
+00:06C2 .line
+00:07E3 .xonly
+00:0932 .yonly
+00:0953 .plot
+00:0970 .wrbyte
+00:09F2 .getpix
+00:0A27 .wrtchr
+00:0A8B _gotogxy
+00:0A96 _wrtchr
+00:0AAB _getpix
+00:0AB7 _color
+00:0AC6 _circle
+00:0AE0 _box
+00:0B04 _line
+00:0B1C _plot_point
+00:0B30 _plot
+00:0B4C ___sdcc_call_hl
+; Area: _HEADER0
+; Area: _HEADER1
+; Area: _HEADER2
+; Area: _HEADER3
+; Area: _HEADER4
+; Area: _HEADER5
+; Area: _HEADER6
+; Area: _HEADER7
+; Area: _HEADER8
+; Area: _HEADER9
+; Area: _HEADERa
+; Area: _HEADERb
+; Area: _HEADERc
+; Area: _HEADERd
+; Area: _HEADERe
+; Area: _HEADERf
+; Area: _HEADER10
+; Area: _HEADER11
+00:01D5 _exit
+; Area: _HEADER12
+; Area: _HOME
+00:0B4D .set_mode
+00:0B5D .remove_VBL
+00:0B63 .remove_LCD
+00:0B69 .remove_TIM
+00:0B6F .remove_SIO
+00:0B75 .remove_JOY
+00:0B7B .add_VBL
+00:0B81 .add_LCD
+00:0B87 .add_TIM
+00:0B8D .add_SIO
+00:0B93 .add_JOY
+00:0B99 .remove_int
+00:0BB8 .add_int
+00:0BD4 .wait_vbl_done
+00:0BD4 _wait_vbl_done
+00:0BEB _display_off
+00:0BEB .display_off
+00:0C0C .serial_IO
+00:0C3B _mode
+00:0C44 _get_mode
+00:0C49 _enable_interrupts
+00:0C4B _disable_interrupts
+00:0C4D _reset
+00:0C4D .reset
+00:0C53 _set_interrupts
+00:0C5E _remove_VBL
+00:0C69 _remove_LCD
+00:0C74 _remove_TIM
+00:0C7F _remove_SIO
+00:0C8A _remove_JOY
+00:0C95 _add_VBL
+00:0CA0 _add_LCD
+00:0CAB _add_TIM
+00:0CB6 _add_SIO
+00:0CC1 _add_JOY
+00:0CCC _clock
+00:0CD5 __printTStates
+00:0CD6 __banked_call
+00:0CD6 banked_call
+00:0CED __banked_ret
+00:0CED banked_ret
+00:0CF5 __hram_banked_call
+00:0D19 _BGB_profiler_message
+00:0D61 _printf
+00:0D7C _sprintf
+; Area: _BASE
+00:0FE9 font_copy_uncompressed
+00:101F font_copy_compressed
+00:1074 font_load
+00:10BC font_copy_current
+00:1104 font_set
+00:1111 .put_char
+00:112A .out_char
+00:1131 .del_char
+00:118C _font_load
+00:119A _font_set
+00:11A9 _font_init
+00:11CB _cls
+00:11CB .cls
+00:11FD .cr_curs
+00:1212 .adv_curs
+00:126E .tmode
+00:1297 .tmode_out
+00:12A7 _font_load_ibm_fixed
+00:12AE _font_ibm_fixed
+00:13B0 _font_ibm_fixed_tiles
+00:1BB0 .gmode
+00:1C12 .vbl
+00:1C1D .lcd
+00:1C2A .draw_image
+00:1C34 .switch_data
+00:1C6B _switch_data
+00:1C86 _draw_image
+00:1C99 .y_table
+00:1DB9 .init_vram
+00:1DC7 .init_wtt
+00:1DD7 .init_btt
+00:1DE5 .init_tt
+00:1DEB .copy_vram
+00:1DFA _get_data
+00:1DFA _set_data
+; Area: _LIT
+; Area: _GSINIT
+00:1E0D gsinit
+; Area: _GSINITTAIL
+; Area: _GSFINAL
+; Area: _DATA
+00:C0A0 ___BGB_PROFILER_INIT
+; Area: _BSS
+00:C0A2 __cpu
+00:C0A3 .mode
+00:C0A4 __io_out
+00:C0A5 __io_in
+00:C0A6 __io_status
+00:C0A7 .vbl_done
+00:C0A8 _sys_time
+00:C0A8 .sys_time
+00:C0AA .int_0x40
+00:C0BA .int_0x48
+00:C0CA .int_0x50
+00:C0DA .int_0x58
+00:C0EA .int_0x60
+00:C0FA font_current
+00:C0FD font_first_free_tile
+00:C0FE font_table
+00:C110 .curx
+00:C111 .cury
+00:C112 .fg_colour
+00:C113 .bg_colour
+; Area: _HEAP
+00:C125 _malloc_heap_start
+; Area: _HRAM13
+00:FF90 __current_bank
+00:FF91 .hram_tramp
+00:FF94 __tramp_proc
+00:FF96 __tramp_bank
+; Area: _EMU_HEADER0
+; Area: _FONT_HEADER0
+; Area: _DRAW_HEADER0
+; Area: .  .ABS.
+00:0000 .__.ABS.
