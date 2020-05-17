@@ -4,7 +4,7 @@ Profiling toolkit for SDCC and BGB
 pre-requirements:
 =================
 
-1. changes to the GBDK library to support gathering of stat: https://github.com/untoxa/gbdk-2020/commit/b64c5424985a26e977a9e942c90214750ec86345 (should be included in the next GBDK-2020 release)
+1. GBDK-2020 v3.1 or higher: https://github.com/Zal0/gbdk-2020/releases
 2. you must #include <gb/bgb_emu.h> in your main source; this enables linking the features, described above
 3. your C-program must be compiled with SDCC "--profile" switch 
 4. you must also switch on saving debug messages into the file in your BGB emulator:
