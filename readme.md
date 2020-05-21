@@ -13,6 +13,17 @@ pre-requirements:
 BGB_toolkit.py contains these helper functions:
 ===============================================
 
+load_nogmb_map
+--------------
+
+    symbols = load_nogmb_map(filename)
+
+parse the *.map file in no$gmb format, that is produced by link-gbz80 linker
+
+    filename        : path and filename to *.map symbols file
+
+function returns the address->symbol dict
+
 load_nogmb_symbols
 ------------------
 

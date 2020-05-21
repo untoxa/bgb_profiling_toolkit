@@ -9,6 +9,35 @@ import sys
 from struct import unpack
 from array import array
 
+def load_nogmb_map(filename):
+    symbols = {}
+    with open(filename) as f:
+        current_bank = 0
+        skip = True
+        line = f.readline()
+        while line:
+            decoded_line = [x.strip() for x in line.split('\t')]
+            if decoded_line[0][:4].lower() == 'area':
+                decoded_area = [x.strip() for x in decoded_line[0].split(' ')]
+                areaname = decoded_area[1]
+                if areaname[:6].lower() == '_code_':
+                    decoded_area = [x.strip() for x in areaname.split('_')]
+                    current_bank = int(decoded_area[2]) if len(decoded_area) >= 3 else 0
+                else:
+                    current_bank = 0
+                skip = False
+            elif len(decoded_line[0]) == 0:
+                pass
+            else:    
+                skip = True
+            if not skip:
+                if len(decoded_line[0]) == 0 and len(decoded_line[1]) == 0:
+                    if len(decoded_line) >= 4:
+                        addr = (current_bank << 16) | int(decoded_line[3], 16)
+                        symbols[addr] = decoded_line[2]
+            line = f.readline()
+    return symbols
+
 def load_nogmb_symbols(filename, **kv):
     resolve_banks = kv.get('resolve_banks', False)
     symbols = {}
