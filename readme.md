@@ -40,19 +40,20 @@ function returns the address->symbol dict
 calc_profiling_stats
 --------------------
 
-    stats = calc_profiling_stats(filename, double_speed=False, symbols={})
+    stats = calc_profiling_stats(filename, double_speed=False, all_data=False, symbols={})
 
 parse the BGB "debug messages" log file and calculate profiling stat
 
     filename        : path and filename to the BGB log file
     double_speed    : set to True if cpu_fast() is called; False by default
+    all_data        : set to True if all avaliable data is required in result
     symbols         : optional symbols dict as returned by load_nogmb_symbols; empty dict by default
 
 function returns the stat dict where call trace is a key and node-stat dict for this trace is a value.
 
 node-stat dict contains:
     
-    {'ncalls': ncalls, 'totalclk': totalclk, 'min': min, 'max': max }
+    {'ncalls': ncalls, 'totalclk': totalclk, 'min': min, 'max': max, 'data': []}
     
 where: 
     
@@ -60,6 +61,7 @@ where:
     totalclk    : total amount of cycles
     min         : minumum number of cycles of this call
     max         : maximum number of cycles of this call
+    data        : list of all measures for this trace (if all_data parameter is set to True)
 
 example output without symbols loaded:
 ![statistics2](/screenshot2.png)
