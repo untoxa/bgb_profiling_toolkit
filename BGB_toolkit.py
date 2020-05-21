@@ -8,7 +8,7 @@
 import sys
 from struct import unpack
 from array import array
-  
+
 def load_nogmb_symbols(filename, **kv):
     resolve_banks = kv.get('resolve_banks', False)
     symbols = {}
@@ -33,6 +33,7 @@ def load_nogmb_symbols(filename, **kv):
 def calc_profiling_stats(filename, **kv):
     double_speed = kv.get('double_speed', False)
     symbols = kv.get('symbols', {})
+    extended = kv.get('all_data', False)
     stat = {}  
     stack = [] 
     path =  []
@@ -64,7 +65,10 @@ def calc_profiling_stats(filename, **kv):
                     statitm['totalclk'] = statitm.setdefault('totalclk', 0) + clk
                     statitm['min'] = min(statitm.setdefault('min', 0), clk)
                     statitm['max'] = max(statitm.setdefault('max', 0), clk)                    
-                    
+                    if extended: 
+                        all_data = statitm.setdefault('data', [])
+                        all_data.append(clk)
+
                     # shortening the path
                     path.pop()
                     
