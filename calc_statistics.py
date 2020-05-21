@@ -7,34 +7,12 @@
 
 import sys
 import math
-import functools
 
 from BGB_toolkit import load_nogmb_symbols, calc_profiling_stats
 
-def percentile(N, percent, key=lambda x:x):
-    """
-    Find the percentile of a list of values.
-
-    @parameter N - is a list of values. Note N MUST BE already sorted.
-    @parameter percent - a float value from 0.0 to 1.0.
-    @parameter key - optional key function to compute value from each element of N.
-
-    @return - the percentile of the values
-    """
-    if not N:
-        return None
-    k = (len(N)-1) * percent
-    f = math.floor(k)
-    c = math.ceil(k)
-    if f == c:
-        return key(N[int(k)])
-    d0 = key(N[int(f)]) * (c-k)
-    d1 = key(N[int(c)]) * (k-f)
-    return d0+d1
-
-def calc_percentile(N, percent):
-    N.sort()
-    return percentile(N, percent)
+def calc_percentile(data, percentile):
+    size = len(data)
+    return 0 if size == 0 else sorted(data)[int(math.ceil((size * percentile) / 100)) - 1]
 
 if len(sys.argv) < 2:
     exit('USAGE: profile.py <profiler_log> <symbols>')
@@ -47,4 +25,4 @@ stat = calc_profiling_stats(sys.argv[1], double_speed=False, all_data=True, symb
 
 # pretty-print the stat
 for k,v in stat.items():
-    print('{:50s} MIN:{:-8d} AVG:{:-10.2f} 95P:{:-8.0f} MAX:{:-8d}   TOTAL: {:s} NCALLS: {:d}'.format(k, v['min'], v['totalclk'] / v['ncalls'], calc_percentile(v['data'], 0.95), v['max'], '0x{:016x}'.format(v['totalclk']), v['ncalls']))
+    print('{:50s} MIN:{:-8d} AVG:{:-10.2f} 95P:{:-8d} MAX:{:-8d}   TOTAL: {:s} NCALLS: {:d}'.format(k, v['min'], v['totalclk'] / v['ncalls'], calc_percentile(v['data'], 95), v['max'], '0x{:016x}'.format(v['totalclk']), v['ncalls']))
