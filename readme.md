@@ -81,5 +81,3 @@ loads the BGB snapshot file into the dict
 function returns a dict, that contains this snapshot. keys of this dict are string ID's, that identify the data, and
 values are either None, Array or [len, Data] list where Data is an integer value; please, examine the log_snapshot.py
 example source and output for the details.
-
-IMPORTANT: register pair values are big-endian!
