@@ -13,12 +13,23 @@ pre-requirements:
 BGB_toolkit.py contains these helper functions:
 ===============================================
 
+load_noi
+--------
+
+    symbols = load_noi(filename)
+
+parses the *.noi symbol file, that is produced by sdldgb linker
+
+    filename        : path and filename to *.noi symbols file
+
+function returns the address->symbol dict
+
 load_nogmb_map
 --------------
 
     symbols = load_nogmb_map(filename)
 
-parse the *.map file in no$gmb format, that is produced by link-gbz80 linker
+parses the *.map file in no$gmb format, that is produced by link-gbz80 linker
 
     filename        : path and filename to *.map symbols file
 
@@ -29,7 +40,7 @@ load_nogmb_symbols
 
     symbols = load_nogmb_symbols(filename, resolve_banks=False)
 
-parse the *.sym file in no$gmb format, that is produced by link-gbz80 linker
+parses the *.sym file in no$gmb format, that is produced by link-gbz80 linker
 
     filename        : path and filename to *.sym symbols file
     resolve_banks   : optional parameter that allows to extract bank numbers from the comments in *.sym file; 
@@ -42,7 +53,7 @@ calc_profiling_stats
 
     stats = calc_profiling_stats(filename, double_speed=False, all_data=False, symbols={})
 
-parse the BGB "debug messages" log file and calculate profiling stat
+parses the BGB "debug messages" log file and calculate profiling stat
 
     filename        : path and filename to the BGB log file
     double_speed    : set to True if cpu_fast() is called; False by default
